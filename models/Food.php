@@ -28,7 +28,7 @@ class Food extends Product {
 
 
     public function setIngredients($_ingredients) {
-        $this->title = $_ingredients;
+        $this->ingredients = $_ingredients;
     }
 
     public function setBrand($_brand) {
