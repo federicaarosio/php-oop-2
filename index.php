@@ -27,25 +27,22 @@ require_once __DIR__ . '/db/data.php';
 
 </head>
 
-<body>
+<body class="bg-light">
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center">Pet Shop</h1>
+                    <h1 class="text-center m-5">Pet Shop</h1>
                 </div>
                 <div class="col-12">
                     <article class="d-flex flex-wrap justify-content-between">
                         <?php foreach ($products as $product) { ?>
-                        <div class="card" style="width: 18rem;">
+                        <div class="card mb-5" style="width: 18rem;">
                             <img src="<?php echo $product->getImgUrl()?>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $product->getTitle()?></h5>
                                 <ul class="card-text">
-                                    <li>
-                                        <strong>Price: </strong>
-                                        <?php echo $product->getPrice() ?> &euro;
-                                    </li>
+
                                     <li>
                                         <strong>Category: </strong>
                                         <span>
@@ -55,6 +52,14 @@ require_once __DIR__ . '/db/data.php';
                                         </span>
 
                                     </li>
+
+                                    <!-- If product-type exists, show it -->
+                                    <?php 
+                                        if (method_exists($product, 'getName')) {
+                                            echo "<li><strong>Product type: </strong>" . $product -> getName() . "</li>";
+                                        } 
+                                    ?>
+
                                     <li>
                                         <?php 
                                             if (method_exists($product, 'getBrand')) {
@@ -62,7 +67,15 @@ require_once __DIR__ . '/db/data.php';
                                             } 
                                         ?>
                                     </li>
-                                    <!-- If brand exists, show it -->
+
+                                    <!-- If ingredients exists, show it -->
+                                    <?php 
+                                        if (method_exists($product, 'getIngredients')) {
+                                            echo "<li><strong>Ingredients: </strong>" . $product -> getIngredients() . "</li>";
+                                        } 
+                                    ?>
+
+                                    <!-- If expiring date exists, show it -->
                                     <?php 
                                         if (method_exists($product, 'getExpiringDate')) {
                                             echo "<li><strong>Expiring Date: </strong>" . $product -> getExpiringDate() . "</li>";
@@ -76,12 +89,12 @@ require_once __DIR__ . '/db/data.php';
                                         } 
                                     ?>
 
-                                    <!-- If ingredients exists, show it -->
-                                    <?php 
-                                        if (method_exists($product, 'getIngredients')) {
-                                            echo "<li><strong>Ingredients: </strong>" . $product -> getIngredients() . "</li>";
-                                        } 
-                                    ?>
+
+
+                                    <li>
+                                        <strong>Price: </strong>
+                                        <?php echo $product->getPrice() ?> &euro;
+                                    </li>
 
                                 </ul>
                                 <a href="#" class="btn btn-primary">Add to cart</a>
