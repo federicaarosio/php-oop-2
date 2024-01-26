@@ -15,7 +15,7 @@ class Food extends Product {
     }
 
     public function getIngredients() {
-        return $this->ingredients;
+        return implode(', ', $this->ingredients);
     }
 
     public function getBrand() {

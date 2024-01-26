@@ -12,7 +12,7 @@ $categories = [
 ];
 
 $products = [
-    $dogKibble = new Food('DogsKibble', 'https://i.pinimg.com/236x/e4/4f/67/e44f67082c7265c8b0a45db298b3f61a.jpg', 32.40, $dogCategory, ['meat', 'fish'], 'dogbrand', 'jan 25'),
+    $dogKibble = new Food('DogsKibble', 'https://i.pinimg.com/236x/e4/4f/67/e44f67082c7265c8b0a45db298b3f61a.jpg', 32.42, $dogCategory, ['meat', 'fish'], 'dogbrand', 'jan 25'),
 
     $catKibble = new Food('Yummy CatsKibble', 'https://i.pinimg.com/236x/2d/63/6a/2d636a3cbedfc8d29e3e0661f4972fd7.jpg', 17.897, $catCategory, ['eggs', 'fish'], 'catbrand', 'apr 25'),
 
