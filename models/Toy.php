@@ -7,8 +7,8 @@ class Toy extends Product {
     protected $size;
     protected $brand;
 
-    public function __construct(string $_title, string $_imgUrl, float $_price, Category $_category, string $_name, int $_size, string $_brand){
-        parent::__construct($_title, $_imgUrl, $_price, $_category);
+    public function __construct(string $_title, string $_imgUrl, float $_price, Category $_category, string $_warehouse, int $_shelf, string $_name, int $_size, string $_brand){
+        parent::__construct($_title, $_imgUrl, $_price, $_category, $_warehouse, $_shelf);
         $this->setName($_name);       
         $this->setSize($_size);
         $this->setBrand($_brand);

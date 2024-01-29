@@ -1,9 +1,14 @@
 <?php
 
+require_once __DIR__ . '/traits/Position.php';
+
 /**
  * Generates a single product.
  */
 class Product {
+
+    use Position;
+
     protected $title;
     protected $imgUrl;
     protected $price;
@@ -20,11 +25,13 @@ class Product {
      * @param float $_price The price of the product
      * @param Category $_category The category of the product
      */
-    public function __construct(string $_title, string $_imgUrl, float $_price, Category $_category) {
+    public function __construct(string $_title, string $_imgUrl, float $_price, Category $_category, string $_warehouse, int $_shelf) {
         $this->setTitle($_title);
         $this->setImgUrl($_imgUrl);
         $this->setPrice($_price);
         $this->setCategory($_category);
+        $this->setWarehouse($_warehouse);
+        $this->setShelf($_shelf);
     }
 
     //Methods
@@ -61,5 +68,12 @@ class Product {
         $this->category = $_category;
     }
 
+    public function setWarehouse($_warehouse) {
+        $this->warehouse = $_warehouse;
+    }
+
+    public function setShelf($_shelf) {
+        $this->shelf = $_shelf;
+    }
     
 }

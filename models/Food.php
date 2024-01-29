@@ -8,8 +8,8 @@ class Food extends Product {
     protected $brand;
     protected $expiring_date;
 
-    public function __construct(string $_title, string $_imgUrl, float $_price, Category $_category, string $_name, array $_ingredients, string $_brand, string $_expiring_date){
-        parent::__construct($_title, $_imgUrl, $_price, $_category);
+    public function __construct(string $_title, string $_imgUrl, float $_price, Category $_category, string $_warehouse, int $_shelf, string $_name, array $_ingredients, string $_brand, string $_expiring_date){
+        parent::__construct($_title, $_imgUrl, $_price, $_category, $_warehouse, $_shelf);
         $this->setName($_name);
         $this->setIngredients($_ingredients);
         $this->setBrand($_brand);

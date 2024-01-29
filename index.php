@@ -63,7 +63,7 @@ require_once __DIR__ . '/db/data.php';
                                     <li>
                                         <?php 
                                             if (method_exists($product, 'getBrand')) {
-                                                echo "<strong>Brand: </strong>" . $product -> getBrand();
+                                                echo "<li><strong>Brand: </strong>" . $product -> getBrand() . "</li>";
                                             } 
                                         ?>
                                     </li>
